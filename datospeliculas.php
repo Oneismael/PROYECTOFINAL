@@ -21,7 +21,7 @@ $host = "localhost";
 		<form class="pelis" method="post" action="">
 				<h2 id="titulo2">Base de datos de películas</h2><br>	
             <p>
-                <span class="ordenar"><input type="radio" name="ordenar1" class="ordenar" value="titulo" checked/>Título </span>
+                <span class="ordenar"><input type="radio" name="ordenar1" class="ordenar" value="titulo"/>Título </span>
                 <span class="ordenar"><input type="radio" name="ordenar1" class="ordenar" value="generoPelicula"/>Género </span>
                 <span class="ordenar"><input type="radio" name="ordenar1" class="ordenar" value="duracion"/>Duración </span>
                 <span class="ordenar"><input type="radio" name="ordenar1" class="ordenar" value="fechaLanzamiento"/>Fecha de Lanzamiento </span>
@@ -65,14 +65,6 @@ $host = "localhost";
             </table></p>
                 <?php
         }elseif (isset($_POST['buscarporgenero'])){
-
-                
-
-
-
-
-
-
             ?>
             <p><table cellpading="6" cellspacing="0" border="1">
             
@@ -87,11 +79,6 @@ $host = "localhost";
                 } ?>
             </tr>
         </table></p><?php
-
-
-
-
-
         }
         else{ 
            if(isset($_POST['ordenado'])){
@@ -125,8 +112,6 @@ $host = "localhost";
                 </tr>
             </table></p>
                 <?php }     
-            
-            
             }?>
             <p>
             <hr id="hrlargo"> <br>
@@ -166,11 +151,19 @@ Pelicula::anadirPelicula($_POST['titulo'],$_POST['generopelicula'],$_POST['durac
 ?>
 <br><p><form action="./datospeliculas.php" method="post"></p><br>
 <p>Pelicula añadida con éxito</p><br>
-<input type="submit" class="boton3" name="desplegable" value="Actualizar"/>
+<input type="submit" class="boton3" name="desplegable" value="Actualizar para ver los cambios"/>
 </form>
 <?php
 }
-} ?>
+}elseif(isset($_POST['modificar'])){
+    Pelicula::guardarPelicula($_POST['titulo'],$_POST['generopelicula'],$_POST['duracion'],$_POST['fechalanzamiento'],$_POST['director']);
+    ?>
+    <br><p><form action="./datospeliculas.php" method="post"></p><br>
+    <p>Pelicula actualizada con éxito</p><br>
+    <input type="submit" class="boton3" name="desplegable" value="Actualizar para ver los cambios"/>
+    </form>
+    <?php
+}?>
                 <?php
                         if (isset($_POST['desplegable'])){
                             ?>

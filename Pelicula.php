@@ -57,15 +57,15 @@ require_once 'Conexion.php';
         $consulta->execute();
         $conexion = null;
      }
-     public static function guardarUsuario($nombreusuario,$correo,$contrasenia,$fechanacimiento,$generousuario){
+     public static function guardarPelicula($titulo, $generoPelicula, $duracion, $fechaLanzamiento, $director){
         $conexion = new Conexion();
-        if($nombreusuario){
-           $consulta = $conexion->prepare('UPDATE ' . self::TABLA .' SET correo = :correo, contrasenia = :contrasenia, fechanacimiento = :fechanacimiento, generousuario = :generousuario WHERE nombreusuario = :nombreusuario');
-           $consulta->bindParam(':correo', $correo);
-           $consulta->bindParam(':contrasenia', $contrasenia);
-           $consulta->bindParam(':fechanacimiento', $fechanacimiento);
-           $consulta->bindParam(':generousuario', $generousuario);
-           $consulta->bindParam(':nombreusuario', $nombreusuario);
+        if($titulo){
+           $consulta = $conexion->prepare('UPDATE ' . self::TABLA .' SET generoPelicula = :generoPelicula, duracion = :duracion, fechaLanzamiento = :fechaLanzamiento, director = :director WHERE titulo = :titulo');
+           $consulta->bindParam(':generoPelicula', $generoPelicula);
+           $consulta->bindParam(':duracion', $duracion);
+           $consulta->bindParam(':fechaLanzamiento', $fechaLanzamiento);
+           $consulta->bindParam(':director', $director);
+           $consulta->bindParam(':titulo', $titulo);
            $consulta->execute();
            $conexion = null;
         }}
