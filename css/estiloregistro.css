@@ -1,0 +1,230 @@
+body{
+	float:center;
+	background-color:#CDCDCD ;
+}
+#contenedor{
+	text-align:center;
+	margin-top:2%;
+	margin-left:25%;
+	margin-right:30%;
+}
+#contenedor1{
+	text-align:center;
+	margin-top:2%;
+	
+}
+
+#contenedor form{
+	text-align:left;
+	margin-left:33%;
+}
+hr{
+	width:60%;
+}
+h1{
+	color:#BC5658;
+}
+h2{
+	color:#BC5658;
+}
+.etiqueta{
+		font-family:'Quicksand', sans-serif;
+		color:CA5C5C;
+		font-size: 20px;
+}
+
+.boton1{
+	color:white;
+		background: #CA5C5C;
+		padding: 16px 40px;
+		font-size:14px;
+		border:none;
+}
+
+.boton1:hover{
+		background-color:#BC5658;
+}
+
+.enlace{
+	font-size: 15px;
+	font-family:'Quicksand', sans-serif;
+	color:#BC5658;
+}
+a {
+	text-decoration:none;
+}
+.enlace:hover{
+	font-size: 25px;
+	font-weight: bold;
+	transition:0.4s;
+	color:#3B83BD;
+}
+
+#peliculas{
+	width: 70%;
+	text-align:left;
+	float: left;
+	margin-left:15%;
+}
+#peliculas p{
+margin: 0 auto;
+float: center;
+}
+#titulo2{
+	margin-left: 40%;
+}
+.ordenar1{
+margin-left: 10px;
+
+}
+
+table {     
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 12px;    
+	margin: 45px;    
+	width: 100%; 
+	text-align: left;    
+	border-collapse: collapse; }
+
+th {     
+	font-size: 13px;     
+	font-weight: normal;    
+	padding: 8px;     
+	background: #ff6666;
+	border-bottom: 1px solid #fff; 
+	color: black; }
+
+td {    
+	padding: 8px;     
+	background: #ff9999;     
+	border-bottom: 1px solid #fff;
+	color: black;    
+	border-top: 1px solid transparent; }
+
+tr:hover td { 
+	background: #BC5658; 
+	color: black;
+	transition:0.1s;
+}
+#th1{
+	width: 200px;
+	height: 2px;
+}
+#th5{
+	width: 200px;
+	height: 2px;
+}
+.pelis{
+	margin-left: 0%;
+}
+.ordenar{
+
+	margin-left: 70px;
+}
+
+#hrlargo{
+	width: 100%;
+}
+.enlace2{
+
+	font-size: 30px;
+	font-family:'Quicksand', sans-serif;
+	color:#3B83BD;
+}
+.enlace2:hover{
+	font-size: 50px;
+	font-weight: bold;
+	transition:0.4s;
+	color:#3B83BD;
+}
+#botonlogin{
+	margin-left: 25%;
+	float:left;
+}
+#botonlogin:hover{
+	background-color:#BC5658;
+}
+#botonregistro:hover{
+	background-color:#BC5658;
+
+}
+#botonregistro{
+	margin-right: 25%;
+	float:right;
+}
+#index{
+	text-align:center;
+	margin-top:2%;
+	margin-left:25%;
+	margin-right:30%;
+}
+#contenedor2 h1{
+	text-align:center;
+	margin-top:2%;
+	margin-left:25%;
+	margin-right:30%;
+}
+
+.volver{
+	position: fixed;
+	left:650px ;
+	bottom:250px;
+	font-size: 15px;
+	font-family:'Quicksand', sans-serif;
+	color:#BC5658;
+}
+.rm{
+	position: fixed;
+	right:800px ;
+	bottom:250px;
+	font-size: 15px;
+	font-family:'Quicksand', sans-serif;
+	color:#BC5658;
+}
+.rm:hover{
+	font-size: 25px;
+	font-weight: bold;
+	transition:0.4s;
+	color:#3B83BD;
+}
+.volver:hover{
+	font-size: 25px;
+	font-weight: bold;
+	transition:0.4s;
+	color:#3B83BD;
+}
+
+.boton3{
+	color:white;
+		background: #CA5C5C;
+		border:1px solid gray;
+}
+.boton3:hover{
+	background-color:#3B83BD;
+
+}
+
+#F{
+	margin-left: -70px;
+}
+
+#botonF2{
+	margin-left: -60px;
+	float:left;
+}
+
+#botonF1{
+	margin-right: 60%;
+	float:right;
+}
+
+.boton4{
+	color:white;
+		background: #CA5C5C;
+		border:1px solid gray;
+		margin-left: 100px;
+}
+.boton4:hover{
+	background-color:#3B83BD;
+
+}
