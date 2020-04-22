@@ -105,9 +105,9 @@ require_once 'Conexion.php';
          }*/
          $conexion = null;
       }
-      public static function mostrarPorTitulo($parametro){
+      public static function mostrarPorTitulo($parametro,$orden){
         $conexion = new Conexion();
-        $consulta = $conexion->prepare("SELECT * FROM " . self::TABLA . " WHERE titulo LIKE '%".$parametro."%'");
+        $consulta = $conexion->prepare("SELECT * FROM " . self::TABLA . " WHERE titulo LIKE '%".$parametro."%' ORDER BY ".$orden);
         $consulta->execute();
         $consulta->setFetchMode(PDO::FETCH_CLASS, 'Pelicula');
         return $obj = $consulta->fetchAll();
@@ -117,9 +117,9 @@ require_once 'Conexion.php';
         }*/
         $conexion = null;
      }
-     public static function mostrarPorGenero($parametro){
+     public static function mostrarPorGenero($parametro,$orden){
         $conexion = new Conexion();
-        $consulta = $conexion->prepare("SELECT * FROM " . self::TABLA . " WHERE generoPelicula LIKE '%".$parametro."%'");
+        $consulta = $conexion->prepare("SELECT * FROM " . self::TABLA . " WHERE generoPelicula LIKE '%".$parametro."%' ORDER BY ".$orden);
         $consulta->execute();
         $consulta->setFetchMode(PDO::FETCH_CLASS, 'Pelicula');
         return $obj = $consulta->fetchAll();

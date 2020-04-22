@@ -21,7 +21,7 @@ $host = "localhost";
 		<form class="pelis" method="post" action="">
 				<h2 id="titulo2">Base de datos de películas</h2><br>	
             <p>
-                <span class="ordenar"><input type="radio" name="ordenar1" class="ordenar" value="titulo"/>Título </span>
+                <span class="ordenar"><input type="radio" name="ordenar1" class="ordenar" value="titulo" REQUIRED/>Título </span>
                 <span class="ordenar"><input type="radio" name="ordenar1" class="ordenar" value="generoPelicula"/>Género </span>
                 <span class="ordenar"><input type="radio" name="ordenar1" class="ordenar" value="duracion"/>Duración </span>
                 <span class="ordenar"><input type="radio" name="ordenar1" class="ordenar" value="fechaLanzamiento"/>Fecha de Lanzamiento </span>
@@ -37,7 +37,7 @@ $host = "localhost";
                 
                 <th id="th1">Título</th><th id="th2">Género</th><th id="th3">Duración</th><th id="th4">Fecha de Lanzamiento</th><th id="th5">Director</th></p>
                 <?php 
-                $obj=Pelicula::mostrarPorTitulo($_POST['buscarportitulo']);
+                $obj=Pelicula::mostrarPorTitulo($_POST['buscarportitulo'],$_POST['ordenar1']);
                     foreach ($obj as $f) {
                         ?><tr>
                         <td><?php echo $f->getTitulo()?></td><td><?php echo $f->getgeneroPelicula()?></td><td><?php echo $f->getDuracion()?></td><td><?php echo $f->getFechaLanzamiento()?></td><td><?php echo $f->getdirector()?></td>
@@ -46,7 +46,7 @@ $host = "localhost";
                     } ?>
                 </tr>
             </table></p><?php
-            }elseif (isset($_POST['eliminarpornombre'])){
+            }elseif(isset($_POST['eliminarpornombre'])){
                 Pelicula::eliminarPelicula($_POST['eliminarportitulo']);
                 ?>
                 <p><table cellpading="6" cellspacing="0" border="1">
@@ -70,7 +70,7 @@ $host = "localhost";
             
             <th id="th1">Título</th><th id="th2">Género</th><th id="th3">Duración</th><th id="th4">Fecha de Lanzamiento</th><th id="th5">Director</th></p>
             <?php 
-            $obj=Pelicula::mostrarPorGenero($_POST['generopelicula']);
+            $obj=Pelicula::mostrarPorGenero($_POST['generopelicula'],$_POST['ordenar1']);
                 foreach ($obj as $f) {
                     ?><tr>
                     <td><?php echo $f->getTitulo()?></td><td><?php echo $f->getgeneroPelicula()?></td><td><?php echo $f->getDuracion()?></td><td><?php echo $f->getFechaLanzamiento()?></td><td><?php echo $f->getdirector()?></td>
@@ -139,28 +139,32 @@ $host = "localhost";
             <hr id="hrlargo">
             <p>
             <br>
+            </form>
+            <form method="post" action="">
                 <input type="submit" class="boton3" name="desplegable" value="¿Quieres añadir o modificar una película?"/>
                 </form>	
                 <?php 
                 if(isset($_POST['anadir'])){
 $comprobante=Pelicula::buscarPorTitulo($_POST['titulo']);
 if($comprobante){
-    echo "Esa pelicula ya existe";
+    echo '<script language="javascript">alert("Esa película ya existe");</script>';
 }else{
 Pelicula::anadirPelicula($_POST['titulo'],$_POST['generopelicula'],$_POST['duracion'],$_POST['fechalanzamiento'],$_POST['director']);
+echo '<script language="javascript">alert("Película añadida con éxito");</script>';
 ?>
 <br><p><form action="./datospeliculas.php" method="post"></p><br>
-<p>Pelicula añadida con éxito</p><br>
-<input type="submit" class="boton3" name="desplegable" value="Actualizar para ver los cambios"/>
+<p>Película añadida con éxito</p><br>
+<input type="submit" class="boton3" name="desplegable" value="Pulsame para ver los cambios"/>
 </form>
 <?php
 }
 }elseif(isset($_POST['modificar'])){
     Pelicula::guardarPelicula($_POST['titulo'],$_POST['generopelicula'],$_POST['duracion'],$_POST['fechalanzamiento'],$_POST['director']);
+    echo '<script language="javascript">alert("Película actualizada con éxito");</script>';
     ?>
     <br><p><form action="./datospeliculas.php" method="post"></p><br>
-    <p>Pelicula actualizada con éxito</p><br>
-    <input type="submit" class="boton3" name="desplegable" value="Actualizar para ver los cambios"/>
+    <p>Película actualizada con éxito</p><br>
+    <input type="submit" class="boton3" name="desplegable" value="Pulsame para ver los cambios"/>
     </form>
     <?php
 }?>
